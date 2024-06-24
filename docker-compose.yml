@@ -1,0 +1,14 @@
+version: '3'
+services:
+  routh-nextjs:
+    image: routh-nextjs
+    container_name: routh-nextjs
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3306:3000
+    environment:
+      - NODE_ENV=production
+      - GENERATE_SOURCEMAP=false  
